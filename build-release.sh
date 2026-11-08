@@ -16,7 +16,7 @@ DISTR="$PWD/distr"
 
 node builder/gen-version.js
 sh build.sh
-sh test.sh
+if [ -f test.sh ]; then sh test.sh; fi
 
 rm -rf "$DISTR"
 mkdir -p "$DISTR"

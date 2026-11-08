@@ -2,8 +2,7 @@
 	"name": "ice-commander-mtp",
 	"version": "0.1.0",
 	"platforms": [
-		"linux",
-		"windows"
+		"linux"
 	],
 	"private": true,
 	"description": "The version this plugin reports. builder/gen-version.js copies it into version.rs.",
