@@ -1,0 +1,14 @@
+[workspace]
+members = ["src/mtp-fs"]
+resolver = "2"
+
+[workspace.dependencies]
+serde_json = "1.0"
+
+ic-plugin-api = { git = "https://github.com/ice-commander/plugin-api.git", branch = "main" }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true

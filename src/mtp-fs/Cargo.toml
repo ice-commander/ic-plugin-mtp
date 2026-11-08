@@ -1,0 +1,26 @@
+[package]
+name = "ic-mtp-fs"
+version = "0.1.0"
+edition = "2021"
+description = "Android phones and other MTP devices as a panel, on Linux and Windows"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+ic-plugin-api = { workspace = true }
+mtp-rs = "0.38.0"
+futures = "0.3"
+bytes = "1"
+serde_json = { workspace = true }
+tempfile = "3"
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+
+[target.'cfg(target_os = "linux")'.dependencies]
+nusb = "0.2.9"
+
+[features]
+default = ["export-abi"]
+export-abi = []
